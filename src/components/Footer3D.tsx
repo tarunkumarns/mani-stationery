@@ -198,16 +198,16 @@ export function Footer3D({ onOpenEnquiry, onOpenDownloadPriceList }: Footer3DPro
                 <span>Call now</span>
               </a>
 
-              {/* Pill "Directions" Button */}
+              {/* Pill "Get Directions" Button */}
               <a
                 id="footer-directions-btn"
-                href={STORE_INFO.googleMapsUrl}
+                href="https://www.google.com/maps/dir/?api=1&destination=Mani+Stationery+Andippatti"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 min-w-[130px] py-3 px-5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-[#331d12] text-slate-800 dark:text-amber-100 font-bold text-xs border border-slate-200 dark:border-slate-800 text-center flex items-center justify-center gap-2 transition-all"
               >
                 <Navigation className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-                <span>Directions</span>
+                <span>Get Directions</span>
               </a>
 
               {/* WhatsApp Enquiry CTA */}

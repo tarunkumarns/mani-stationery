@@ -8,6 +8,8 @@ import {
   ArrowRight
 } from 'lucide-react';
 import { ManiStationeryLogo } from './ManiStationeryLogo';
+// @ts-ignore
+import insideShopImage from '../assets/images/regenerated_image_1789553465282.jpg';
 
 interface StoreInsideGifSectionProps {
   onOpenEnquiry: (productName?: string) => void;
@@ -82,7 +84,7 @@ export function StoreInsideGifSection({ onOpenEnquiry }: StoreInsideGifSectionPr
             {/* VISUAL TOUR CANVAS: Fallback logic for uploaded photo */}
             <div className="relative w-full rounded-2xl overflow-hidden aspect-[4/3] sm:aspect-[16/9] shadow-inner select-none bg-slate-100 dark:bg-slate-950 flex-grow group">
               <img 
-                src="/7a6f2dd4-e896-4ca6-bd7f-9d2241a358bc.jpg"
+                src={insideShopImage}
                 onError={(e) => { e.currentTarget.src = "https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&fit=crop&q=80&w=2000" }}
                 alt="Inside Mani Stationery"
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
