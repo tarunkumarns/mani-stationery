@@ -92,7 +92,7 @@ export function ProductCatalog3D({ onOpenEnquiry }: ProductCatalog3DProps) {
                   Official Dealer of Double A® Copier Paper
                 </h3>
                 <p className="mt-2 text-blue-100 text-sm leading-relaxed">
-                  Mani Stationery is the premier authorized dealer of genuine Double A® 80 GSM &amp; 75 GSM paper across Andippatti and Theni District. Guaranteed jam-free 30 million fibers/gram paper for commercial high-speed Xerox machines, offices, and schools.
+                  Mani Stationery is the premier authorized dealer of genuine Double A® 80 GSM &amp; 70 GSM paper across Andippatti and Theni District. Guaranteed jam-free 30 million fibers/gram paper for commercial high-speed Xerox machines, offices, and schools.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2 text-xs font-bold text-blue-200">
                   <span className="bg-blue-950/80 px-3 py-1 rounded-lg border border-blue-700/50">&bull; 30 Million Fibers Per Gram</span>
@@ -245,7 +245,7 @@ export function ProductCatalog3D({ onOpenEnquiry }: ProductCatalog3DProps) {
                   Double A &amp; Xerox
                 </h3>
                 <p className="text-white/90 text-sm font-medium leading-relaxed max-w-xs">
-                  80 &amp; 75 GSM copier reams, doorstep carton delivery across Theni, and instant high-speed photocopy.
+                  80 &amp; 70 GSM copier reams, doorstep carton delivery across Theni, and instant high-speed photocopy.
                 </p>
               </div>
 

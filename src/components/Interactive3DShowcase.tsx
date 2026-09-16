@@ -12,7 +12,7 @@ export function Interactive3DShowcase({ onOpenEnquiry }: Interactive3DShowcasePr
   const showcaseItems = [
     {
       id: 'paper',
-      title: 'Double A® Premium Copier Paper (80 GSM)',
+      title: 'Double A® Premium Copier Paper (80 & 70 GSM)',
       category: 'Paper Dealership',
       badge: 'Bestseller · Dealer Stock',
       badgeColor: 'bg-blue-100 text-blue-900 border-blue-300',

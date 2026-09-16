@@ -47,7 +47,7 @@ export const STORE_INFO: StoreInfo = {
   },
   dealerDetails: {
     brand: "Double A®",
-    product: "AA Double A4 Paper (80 GSM & 75 GSM)",
+    product: "AA Double A4 Paper (80 GSM & 70 GSM)",
     coverage: ["Andippatti", "Jakkampatti", "Periyakulam", "Kandamanur", "All Theni District"],
     minOrderBoxes: 10,
     benefits: [
@@ -148,7 +148,7 @@ export const PRODUCTS_CATALOG: ProductItem[] = [
   },
   {
     id: "prod-4",
-    name: "AA Double A4 Paper (80 & 75 GSM)",
+    name: "AA Double A4 Paper (80 & 70 GSM)",
     category: "Official Dealer",
     description: "Authorized dealer of Double A copier paper with 30 million fibers per gram. Jam-free photocopying for commercial Xerox and offices.",
     specs: ["Size: A4 (210 x 297 mm)", "Ream: 500 Sheets", "Min 10 Boxes for Doorstep Delivery", "Wholesale Rates for Theni District"],

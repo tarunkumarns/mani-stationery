@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { MapPin, Phone, MessageSquare, Clock, Navigation, ExternalLink, ShieldCheck, Heart, Sparkles, Download, Video } from 'lucide-react';
 import { STORE_INFO } from '../data/storeData';
 import { ManiStationeryLogo } from './ManiStationeryLogo';
+// @ts-ignore
+import mapImage from '../assets/images/map-location.png';
 
 interface Footer3DProps {
   onOpenEnquiry: () => void;
@@ -40,45 +42,21 @@ export function Footer3D({ onOpenEnquiry, onOpenDownloadPriceList }: Footer3DPro
           {/* Left: Vector Map Visualizer styled after Screenshot 5 */}
           <div className="lg:col-span-6 rounded-3xl overflow-hidden border-2 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-md relative flex flex-col min-h-[400px]">
             
-            {/* Map Canvas Visualizer mirroring the screenshot layout */}
-            <div className="relative flex-1 bg-slate-900 flex items-center justify-center p-6 overflow-hidden">
-              
-              {/* Map grid lines (subtle angled grid) */}
-              <div 
-                className="absolute inset-0 opacity-20 pointer-events-none"
-                style={{
-                  backgroundImage: `linear-gradient(to right, #38bdf8 1px, transparent 1px), linear-gradient(to bottom, #38bdf8 1px, transparent 1px)`,
-                  backgroundSize: '48px 48px',
-                  transform: 'rotate(-12deg) scale(1.4)',
-                }}
+            {/* Map Canvas Visualizer replacing abstract UI with Screenshot */}
+            <div className="relative flex-1 bg-slate-100 dark:bg-slate-900 overflow-hidden group min-h-[300px]">
+              <img 
+                src={mapImage}
+                alt="Mani Stationery Satellite Map Location"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-
-              {/* Waterway / Vaigai road representation */}
-              <div className="absolute w-[150%] h-12 bg-sky-800/40 transform -rotate-25 border-y border-sky-400/30" />
-
-              {/* Radar pulse circles centering on location */}
-              <div className="relative flex items-center justify-center">
-                <div className="absolute w-64 h-64 rounded-full border border-teal-500/20 animate-ping opacity-30" />
-                <div className="absolute w-48 h-48 rounded-full border border-teal-500/30" />
-                <div className="absolute w-32 h-32 rounded-full border border-teal-400/40 bg-teal-500/5" />
-                <div className="absolute w-16 h-16 rounded-full border-2 border-orange-500/50 bg-orange-500/10" />
-
-                {/* Orange Map Pin from Screenshot 5 */}
-                <div className="relative z-10 p-3 rounded-full bg-indigo-600 text-white shadow-2xl border-2 border-white transform hover:scale-110 transition-transform">
-                  <MapPin className="w-6 h-6 fill-white text-indigo-600" />
-                </div>
-              </div>
-
-              {/* Landmark Floating Tag */}
-              <div className="absolute top-5 left-5 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-white/20 backdrop-blur-md">
-                <span className="text-xs font-bold text-white">
+              <div className="absolute inset-0 bg-slate-900/10 pointer-events-none group-hover:bg-transparent transition-colors duration-500" />
+              
+              {/* Floating Tag */}
+              <div className="absolute top-5 left-5 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-white/20 backdrop-blur-md shadow-lg">
+                <span className="text-xs font-bold text-white flex items-center gap-1.5">
+                  <MapPin className="w-3.5 h-3.5 text-indigo-400" />
                   AA Complex Aalamara, Vaigai Road
                 </span>
-              </div>
-
-              {/* GPS Coordinates Tag */}
-              <div className="absolute bottom-5 left-5 px-2.5 py-1 rounded-lg bg-black/70 backdrop-blur-md text-[10px] font-mono text-slate-300">
-                GPS: 10.0163° N, 77.6254° E &bull; Andippatti
               </div>
 
               {/* Open in Maps Button */}
@@ -86,12 +64,11 @@ export function Footer3D({ onOpenEnquiry, onOpenDownloadPriceList }: Footer3DPro
                 href={STORE_INFO.googleMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary-gold absolute bottom-5 right-5 px-3.5 py-2 rounded-xl text-xs font-black shadow-lg flex items-center gap-1.5"
+                className="btn-primary-gold absolute bottom-5 right-5 px-3.5 py-2 rounded-xl text-xs font-black shadow-lg flex items-center gap-1.5 hover:scale-105 transition-transform"
               >
                 <span>Google Maps</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
-
             </div>
 
             {/* Map bottom bar */}

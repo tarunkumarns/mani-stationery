@@ -140,7 +140,7 @@ export function printOrSavePriceListPDF() {
           <h1>MANI STATIONERY</h1>
           <p><strong>Proprietor: ${STORE_INFO.ownerName}</strong> &bull; Phone: ${STORE_INFO.formattedPhone}</p>
           <p>${STORE_INFO.address.fullText}</p>
-          <span class="badge">Official Dealer: AA Double A4 Paper (80 & 75 GSM) &bull; Instant Xerox Service</span>
+          <span class="badge">Official Dealer: AA Double A4 Paper (80 & 70 GSM) &bull; Instant Xerox Service</span>
         </div>
         <table>
           <thead>

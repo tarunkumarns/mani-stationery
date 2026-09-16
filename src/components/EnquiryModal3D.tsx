@@ -174,7 +174,7 @@ export function EnquiryModal3D({ isOpen, onClose, defaultProduct = '' }: Enquiry
                     className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-300 text-slate-900 bg-white focus:outline-none focus:border-blue-600 text-sm appearance-none cursor-pointer"
                   >
                     <option value="AA Double A4 Paper (80 GSM Wholesale Box)">AA Double A4 Paper (80 GSM Wholesale Box)</option>
-                    <option value="AA Double A4 Paper (75 GSM Copier)">AA Double A4 Paper (75 GSM Copier)</option>
+                    <option value="AA Double A4 Paper (70 GSM Copier)">AA Double A4 Paper (70 GSM Copier)</option>
                     <option value="Notebooks Collection (Class Notes, Plans, Registers)">Notebooks Collection (Class Notes, Plans, Registers)</option>
                     <option value="School Supplies (Pens, Geometry Boxes, Exam Kits)">School Supplies (Pens, Geometry Boxes, Exam Kits)</option>
                     <option value="Little Finds (Creative Extras, Art Supplies, Novelties)">Little Finds (Creative Extras, Art Supplies, Novelties)</option>

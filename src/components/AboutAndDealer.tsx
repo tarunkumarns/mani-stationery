@@ -208,7 +208,7 @@ export function AboutAndDealer({ onOpenEnquiry }: AboutAndDealerProps) {
               </h3>
 
               <p className="text-slate-700 dark:text-amber-100/80 text-base leading-relaxed mb-6">
-                Mani Stationery is the premier authorized dealer of genuine Double A® 80 GSM &amp; 75 GSM paper across Andippatti, Jakkampatti, and the entire Theni District. Double A paper is manufactured using premium farmed eucalyptus pulp containing <strong className="text-slate-950 dark:text-white">30 million fibers per gram</strong> for flawless, jam-free photocopying and ultra-crisp laser printing.
+                Mani Stationery is the premier authorized dealer of genuine Double A® 80 GSM &amp; 70 GSM paper across Andippatti, Jakkampatti, and the entire Theni District. Double A paper is manufactured using premium farmed eucalyptus pulp containing <strong className="text-slate-950 dark:text-white">30 million fibers per gram</strong> for flawless, jam-free photocopying and ultra-crisp laser printing.
               </p>
 
               {/* Dealer Highlights */}
@@ -248,7 +248,7 @@ export function AboutAndDealer({ onOpenEnquiry }: AboutAndDealerProps) {
                       AUTHENTIC GUARANTEE
                     </span>
                     <h4 className="font-heading font-black text-2xl text-white">
-                      Double A® 80 / 75 GSM
+                      Double A® 80 / 70 GSM
                     </h4>
                   </div>
                   <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-blue-200">

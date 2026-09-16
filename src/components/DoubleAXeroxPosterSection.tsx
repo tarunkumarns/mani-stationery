@@ -30,7 +30,7 @@ export function DoubleAXeroxPosterSection({ onOpenEnquiry }: DoubleAXeroxPosterS
 
   // Wholesale Box Calculator State
   const [boxQuantity, setBoxQuantity] = useState<number>(10); // Minimum 10 boxes
-  const [selectedGsm, setSelectedGsm] = useState<'80' | '75'>('80');
+  const [selectedGsm, setSelectedGsm] = useState<'80' | '70'>('80');
   const [deliveryTown, setDeliveryTown] = useState<string>('Andippatti');
 
   // Calculate reams and total sheets
@@ -432,14 +432,14 @@ export function DoubleAXeroxPosterSection({ onOpenEnquiry }: DoubleAXeroxPosterS
                     </button>
                     <button
                       type="button"
-                      onClick={() => setSelectedGsm('75')}
+                      onClick={() => setSelectedGsm('70')}
                       className={`p-3 rounded-xl border-2 text-xs font-bold transition-all cursor-pointer text-left ${
-                        selectedGsm === '75'
+                        selectedGsm === '70'
                           ? 'bg-blue-50 border-blue-600 text-blue-950 shadow-xs'
                           : 'bg-white border-slate-200 text-slate-600 hover:border-slate-300'
                       }`}
                     >
-                      <span className="font-black block">75 GSM (Daily Copier)</span>
+                      <span className="font-black block">70 GSM (Daily Copier)</span>
                       <span className="text-[10px] text-blue-700 font-semibold mt-0.5 block">High Speed Bulk Xerox</span>
                     </button>
                   </div>

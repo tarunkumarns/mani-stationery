@@ -192,7 +192,7 @@ export function Hero3D({ onOpenEnquiry, onOpenDownloadPriceList }: Hero3DProps) 
                     Double A A4
                   </h4>
                   <p className="text-[11px] text-blue-700 dark:text-blue-300 font-semibold mt-0.5">
-                    Official Dealer &bull; 80/75 GSM
+                    Official Dealer &bull; 80/70 GSM
                   </p>
                   <span className="inline-block mt-2 text-[10px] font-bold text-blue-800 dark:text-blue-400 group-hover:underline">
                     30M Fibers/g &rarr;
