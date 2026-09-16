@@ -1,21 +1,12 @@
-import { useState } from 'react';
+import { motion } from 'motion/react';
 import { 
   Compass, 
-  MapPin, 
-  Phone, 
-  MessageSquare, 
-  ArrowRight, 
-  CheckCircle2, 
-  Store, 
-  Sparkles, 
+  MessageSquare,
   Printer, 
   BookOpen, 
-  ShieldCheck, 
-  Layers, 
-  Info,
-  Maximize2
+  Star,
+  ArrowRight
 } from 'lucide-react';
-import { STORE_INFO } from '../data/storeData';
 import { ManiStationeryLogo } from './ManiStationeryLogo';
 
 interface StoreInsideGifSectionProps {
@@ -23,206 +14,166 @@ interface StoreInsideGifSectionProps {
 }
 
 export function StoreInsideGifSection({ onOpenEnquiry }: StoreInsideGifSectionProps) {
-  const [activeHotspot, setActiveHotspot] = useState<number>(1);
-  const [activeTab, setActiveTab] = useState<'tour' | 'details'>('tour');
-
-  const tourHotspots = [
-    {
-      id: 1,
-      x: '24%',
-      y: '65%',
-      title: 'Yellow Service Counter & Pen Stand',
-      badge: 'Welcoming Counter',
-      desc: 'Our signature bright yellow wooden counter where Ashok Kumar B greets customers. Features a full pen testing stand with cello, flair, and gel pens ready for trial.',
-      tag: 'Customer Desk',
-      color: 'bg-amber-400 text-slate-950',
-    },
-    {
-      id: 2,
-      x: '68%',
-      y: '45%',
-      title: 'Rainbow Cubby Shelves (Notebooks & Registers)',
-      badge: 'Classroom Stock',
-      desc: 'Vibrant floor-to-ceiling multi-colored cubby shelves stacked with thousands of long size, king size, ruled, unruled, single line, four line, and account registers.',
-      tag: 'Over 1,000 Notebooks',
-      color: 'bg-emerald-500 text-white',
-    },
-    {
-      id: 3,
-      x: '82%',
-      y: '68%',
-      title: 'Shape Stationery Items (Official Dealer)',
-      badge: 'Official Dealer',
-      desc: 'Genuine Shape mathematical instrument boxes, 15cm & 30cm precision transparent rulers, compass sets, and durable clear student exam pouches.',
-      tag: 'Shape Brand Dealer',
-      color: 'bg-orange-500 text-white',
-    },
-    {
-      id: 4,
-      x: '50%',
-      y: '30%',
-      title: 'Double A® Paper Stock (Official Dealer)',
-      badge: 'Authorized Stockist',
-      desc: 'Authorized dealership reams and bulk cartons of world-class Double A 80 GSM & 75 GSM paper, ready for instant doorstep delivery across Theni district.',
-      tag: 'Double A 80 & 75 GSM',
-      color: 'bg-blue-600 text-white',
-    },
-    {
-      id: 5,
-      x: '38%',
-      y: '78%',
-      title: 'Xerox & Instant Document Station',
-      badge: 'Fast Service',
-      desc: 'High-speed photocopiers for crisp black & white and colour copies, student project printouts, fast spiral comb binding, and exam certificate lamination.',
-      tag: 'Instant Xerox & Print',
-      color: 'bg-indigo-600 text-white',
-    },
-  ];
-
-  const currentSpot = tourHotspots.find(h => h.id === activeHotspot) || tourHotspots[0];
-
   return (
-    <section id="inside-tour" className="py-16 sm:py-20 bg-slate-50 dark:bg-slate-950 relative overflow-hidden border-b border-slate-200 dark:border-slate-800 transition-colors duration-200">
+    <section id="inside-tour" className="py-20 sm:py-28 bg-slate-50 dark:bg-slate-950 relative overflow-hidden border-b border-slate-200 dark:border-slate-800 transition-colors duration-200">
       
       {/* Ambient decorative gradients */}
-      <div className="absolute top-1/4 right-[-5%] w-[450px] h-[450px] bg-amber-100/50 dark:bg-amber-950/20 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-10 left-[-5%] w-[500px] h-[500px] bg-orange-100/50 dark:bg-orange-950/20 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/4 right-[-5%] w-[500px] h-[500px] bg-amber-200/40 dark:bg-amber-900/20 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-10 left-[-5%] w-[600px] h-[600px] bg-indigo-200/40 dark:bg-indigo-900/10 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100 dark:bg-amber-950/80 text-amber-900 dark:text-amber-200 border border-amber-300 dark:border-amber-800 text-xs font-black uppercase tracking-widest mb-3">
-            <Compass className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
-            <span>AUTHENTIC STORE TOUR &bull; INSIDE THE SHOP</span>
-          </div>
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-slate-900 text-indigo-600 dark:text-indigo-400 border border-slate-200 dark:border-slate-800 text-xs font-black uppercase tracking-widest mb-4 shadow-sm"
+          >
+            <Compass className="w-4 h-4" />
+            <span>AUTHENTIC STORE TOUR</span>
+          </motion.div>
 
-          <h2 className="font-heading font-black text-3xl sm:text-5xl text-slate-900 dark:text-white tracking-tight leading-tight">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="font-heading font-black text-4xl sm:text-6xl text-slate-900 dark:text-white tracking-tight leading-tight"
+          >
             Take a Look <br />
-            <span className="text-indigo-600 dark:text-indigo-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-indigo-600 dark:from-amber-400 dark:to-indigo-400">
               Inside Mani Stationery
             </span>
-          </h2>
-
-          <p className="mt-3 text-slate-600 dark:text-amber-100/80 text-sm sm:text-base leading-relaxed">
-            Step right into our shop at Vaigai Road, Andippatti. A warm, brightly stocked neighbourhood haven
-            where school children, college students, and local businesses find everyday essentials.
-          </p>
+          </motion.h2>
         </div>
 
-        {/* INTERACTIVE STORE TOUR STAGE */}
-        <div className="max-w-5xl mx-auto">
-          <div className="relative rounded-3xl bg-[#1e120b] p-3 sm:p-4 border-2 border-amber-900/30 dark:border-amber-900/50 shadow-2xl overflow-hidden">
-            
+        {/* INTERACTIVE STORE TOUR STAGE - Glassmorphism Bento Layout */}
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6">
+          
+          {/* Main Visual Image Stage */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, type: "spring", stiffness: 100 }}
+            className="lg:col-span-8 relative rounded-3xl bg-white dark:bg-slate-900 p-2 border border-slate-200 dark:border-slate-800 shadow-xl overflow-hidden flex flex-col"
+          >
             {/* Top Bar with Official Shop Crest */}
-            <div className="flex flex-wrap items-center justify-between px-3 py-2 text-xs text-white/90 mb-2 gap-2 border-b border-amber-950/60 pb-2">
+            <div className="flex flex-wrap items-center justify-between px-4 py-3 text-xs mb-2 gap-2 border-b border-slate-100 dark:border-slate-800">
               <div className="flex items-center gap-3">
                 <ManiStationeryLogo variant="icon" size="sm" />
                 <div>
-                  <span className="font-heading font-black text-xs sm:text-sm tracking-wide text-white block leading-none">
+                  <span className="font-heading font-black text-xs sm:text-sm tracking-wide text-slate-900 dark:text-white block leading-none">
                     MANI STATIONERY &bull; SHOP FLOOR
                   </span>
-                  <span className="text-[10px] text-amber-300 font-bold">
+                  <span className="text-[10px] text-slate-500 dark:text-slate-400 font-bold mt-1 block">
                     Vaigai Road, Andippatti &bull; Authentic Interior
                   </span>
                 </div>
               </div>
-
-              <div className="flex items-center gap-2">
-                <span className="hidden sm:inline-flex items-center gap-1.5 bg-black/60 px-3 py-1 rounded-full text-[11px] font-bold text-amber-300 border border-amber-500/30">
-                  <Sparkles className="w-3 h-3 text-amber-400" />
-                  <span>Interactive Hotspot Map</span>
-                </span>
-                <span className="bg-emerald-500 text-slate-950 px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wider">
-                  Open Now
-                </span>
-              </div>
+              <span className="bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-wider flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                Open Now
+              </span>
             </div>
 
-            {/* VISUAL TOUR CANVAS: Realistic recreation of the user's inside shop photo */}
-            <div className="relative w-full rounded-2xl overflow-hidden aspect-[16/9] sm:aspect-[16/8] shadow-inner select-none">
-              
-              {/* The Actual Inside Shop Photo */}
+            {/* VISUAL TOUR CANVAS: Fallback logic for uploaded photo */}
+            <div className="relative w-full rounded-2xl overflow-hidden aspect-[4/3] sm:aspect-[16/9] shadow-inner select-none bg-slate-100 dark:bg-slate-950 flex-grow group">
               <img 
                 src="/7a6f2dd4-e896-4ca6-bd7f-9d2241a358bc.jpg"
+                onError={(e) => { e.currentTarget.src = "https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&fit=crop&q=80&w=2000" }}
                 alt="Inside Mani Stationery"
-                className="absolute inset-0 w-full h-full object-cover opacity-95 hover:opacity-100 transition-opacity"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-
-            </div>
-
-            {/* Bottom info strip with address & call */}
-            <div className="mt-3 p-3 bg-white dark:bg-slate-900 rounded-xl flex flex-col sm:flex-row items-center justify-between gap-3 text-xs border border-slate-200 dark:border-slate-800">
-              <div className="flex items-center gap-2 text-amber-200/80 text-center sm:text-left">
-                <MapPin className="w-4 h-4 text-indigo-600 shrink-0" />
-                <span>
-                  Bus stop, AA Complex Aalamara, Vaigai Road, Andippatti &bull; Open today until 8:30 PM
-                </span>
-              </div>
-
-              <div className="flex items-center gap-2 w-full sm:w-auto">
-                <a
-                  href={`tel:${STORE_INFO.phone}`}
-                  className="btn-primary flex-1 sm:flex-none px-4 py-2 rounded-xl text-xs font-black text-center flex items-center justify-center gap-1.5 shadow-sm"
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent pointer-events-none" />
+              
+              {/* Floating Review Prompt inside the image */}
+              <div className="absolute bottom-4 left-4 right-4 sm:left-6 sm:bottom-6">
+                <a 
+                  href="https://www.google.com/maps/search/?api=1&query=Mani+Stationery+Andippatti"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-white/20 shadow-2xl hover:scale-105 transition-transform text-slate-900 dark:text-white font-black text-xs sm:text-sm"
                 >
-                  <Phone className="w-3.5 h-3.5" />
-                  <span>Call {STORE_INFO.ownerName}</span>
+                  <div className="flex -space-x-1">
+                    <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
+                    <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
+                    <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
+                    <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
+                    <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
+                  </div>
+                  <span className="ml-1">Review us on Google Maps</span>
+                  <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-indigo-600 group-hover:translate-x-1 transition-all" />
                 </a>
-                <button
-                  onClick={() => onOpenEnquiry("Shop Visit & Directions")}
-                  className="btn-primary-whatsapp flex-1 sm:flex-none px-4 py-2 rounded-xl text-xs font-black text-center flex items-center justify-center gap-1.5 cursor-pointer shadow-sm"
-                >
-                  <MessageSquare className="w-3.5 h-3.5" />
-                  <span>Ask Directions</span>
-                </button>
               </div>
             </div>
+          </motion.div>
 
-          </div>
+          {/* Quick Features Bento Sidebar */}
+          <div className="lg:col-span-4 flex flex-col gap-4">
+            
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-lg flex-1 flex flex-col justify-center relative overflow-hidden group"
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-amber-100 dark:bg-amber-900/20 rounded-full blur-2xl -mr-10 -mt-10 transition-transform group-hover:scale-150" />
+              <div className="w-12 h-12 rounded-2xl bg-amber-100 dark:bg-amber-950/50 text-amber-600 dark:text-amber-400 flex items-center justify-center mb-4 relative z-10 border border-amber-200 dark:border-amber-800">
+                <BookOpen className="w-6 h-6" />
+              </div>
+              <h4 className="font-heading font-black text-slate-900 dark:text-white text-lg relative z-10">
+                Over 164 Items
+              </h4>
+              <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 relative z-10 leading-relaxed">
+                Notebooks, long size, ledgers, pens, school kits, and art colors fully stocked.
+              </p>
+            </motion.div>
 
-          {/* Quick Feature Cards below Video / Tour */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
-            <div className="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-start gap-3 shadow-xs">
-              <div className="w-9 h-9 rounded-xl bg-amber-100 dark:bg-amber-950 text-indigo-600 dark:text-amber-400 flex items-center justify-center shrink-0 mt-0.5">
-                <BookOpen className="w-5 h-5" />
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="p-6 rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-lg flex-1 flex flex-col justify-center relative overflow-hidden group"
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-100 dark:bg-indigo-900/20 rounded-full blur-2xl -mr-10 -mt-10 transition-transform group-hover:scale-150" />
+              <div className="w-12 h-12 rounded-2xl bg-indigo-100 dark:bg-indigo-950/50 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mb-4 relative z-10 border border-indigo-200 dark:border-indigo-800">
+                <Printer className="w-6 h-6" />
               </div>
-              <div>
-                <h4 className="font-heading font-black text-slate-900 dark:text-white text-xs sm:text-sm">
-                  Over 164 Stationery Items
-                </h4>
-                <p className="text-[11px] text-slate-600 dark:text-amber-100/70 mt-0.5">
-                  Notebooks, long size, ledgers, pens, school kits, and art colors in stock.
-                </p>
-              </div>
-            </div>
+              <h4 className="font-heading font-black text-slate-900 dark:text-white text-lg relative z-10">
+                Instant Xerox
+              </h4>
+              <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 relative z-10 leading-relaxed">
+                High-speed crisp copies, printouts, spiral binding, and certificate lamination.
+              </p>
+            </motion.div>
 
-            <div className="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-blue-200 dark:border-blue-900/40 flex items-start gap-3 shadow-xs">
-              <div className="w-9 h-9 rounded-xl bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 flex items-center justify-center shrink-0 mt-0.5">
-                <Printer className="w-5 h-5" />
-              </div>
-              <div>
-                <h4 className="font-heading font-black text-slate-900 dark:text-white text-xs sm:text-sm">
-                  Instant Xerox &amp; Spiral Binding
-                </h4>
-                <p className="text-[11px] text-slate-600 dark:text-amber-100/70 mt-0.5">
-                  High-speed crisp black &amp; white copies, printouts, and exam document lamination.
-                </p>
-              </div>
-            </div>
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+              className="p-6 rounded-3xl bg-slate-900 dark:bg-slate-950 border border-slate-800 shadow-lg flex-1 flex flex-col justify-center relative overflow-hidden"
+            >
+              <h4 className="font-heading font-black text-white text-lg mb-2 relative z-10">
+                Can't find it?
+              </h4>
+              <p className="text-sm text-slate-400 mb-4 relative z-10 leading-relaxed">
+                Message Ashok directly to ask if we have your item in stock.
+              </p>
+              <button
+                onClick={() => onOpenEnquiry("Shop Visit & Directions")}
+                className="w-full py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-amber-950 font-black flex items-center justify-center gap-2 transition-colors cursor-pointer"
+              >
+                <MessageSquare className="w-4 h-4" />
+                Message Store
+              </button>
+            </motion.div>
 
-            <div className="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-emerald-200 dark:border-emerald-900/40 flex items-start gap-3 shadow-xs">
-              <div className="w-9 h-9 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 flex items-center justify-center shrink-0 mt-0.5">
-                <ShieldCheck className="w-5 h-5" />
-              </div>
-              <div>
-                <h4 className="font-heading font-black text-slate-900 dark:text-white text-xs sm:text-sm">
-                  Official Double A &amp; Shape Dealer
-                </h4>
-                <p className="text-[11px] text-slate-600 dark:text-amber-100/70 mt-0.5">
-                  Authorized dealer for Double A copier paper &amp; Shape brand geometry instruments.
-                </p>
-              </div>
-            </div>
           </div>
 
         </div>
