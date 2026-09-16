@@ -1,0 +1,8 @@
+{
+  "name": "Mani Stationery",
+  "description": "Interactive website for Mani Stationery in Andippatti, Theni — Official Dealer for AA Double A4 Paper, 164-item product price list, Xerox station, and school supplies.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
